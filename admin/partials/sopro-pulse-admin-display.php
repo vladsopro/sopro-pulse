@@ -26,4 +26,6 @@
 			submit_button();
 		?>
 	</form>
+	<div>
+	<a href="https://sopro.io/sopro-plugin-settings">Where do I find my Sopro Plugin ID?</a></div>
 </div>

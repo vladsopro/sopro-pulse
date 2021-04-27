@@ -108,7 +108,7 @@ class Sopro_Pulse_Admin {
 	public function register_settings_page() {
 		
 		add_submenu_page(
-			'options-general.php',                             // parent slug
+			'options-general.php',                   // parent slug
 			__( 'Sopro Pulse', 'sopro-pulse' ),      // page title
 			__( 'Sopro Pulse', 'sopro-pulse' ),      // menu title
 			'manage_options',                        // capability
@@ -146,14 +146,14 @@ class Sopro_Pulse_Admin {
 		// Here we are going to add a section for our setting.
 		add_settings_section(
 			$this->plugin_name . '-settings-section',
-			__( 'Sopro tracking settings', 'sopro-pulse' ),
+			__( 'Sopro Plugin settings', 'sopro-pulse' ),
 			array( $this, 'sandbox_add_settings_section' ),
 			$this->plugin_name . '-settings'
 		);
 
 		add_settings_field(
 			'sopro-tracking',
-			__( 'Enter your Sopro tracking ID', 'sopro-pulse' ),
+			__( 'Enter your Sopro Plugin ID', 'sopro-pulse' ),
 			array( $this, 'sandbox_add_settings_field_input_text' ),
 			$this->plugin_name . '-settings',
 			$this->plugin_name . '-settings-section',
@@ -201,5 +201,21 @@ class Sopro_Pulse_Admin {
 		<?php
 
 	}
+
+	/**
+	 * Adding Options link to Plugin list in WordPress Dashboard
+	 * 
+	 * @since 1.0.1
+	 */
+
+	public function add_plugin_options_link($links) {
+
+			$options_link = '<a href="' . admin_url( 'options-general.php?page=sopro-pulse' ) . '">' . __('Settings') . '</a>';
+			array_unshift($links, $options_link);
+			return $links;
+	
+
+	}
+	
 
 }
