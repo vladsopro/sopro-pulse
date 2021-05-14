@@ -125,7 +125,7 @@ class Sopro_Pulse_Public {
 					for (k in e) { if (e.hasOwnProperty(k)) a.push(encodeURIComponent(k) + '=' + encodeURIComponent(e[k])); }
 					s = u.createElement('script'); s.src = t + '?' + a.join('&'); u.head.appendChild(s);
 				}) 
-				("<?php echo $the_sopro_tracking_id; ?>", document, 'https://sopro-personalisation-staging.azurewebsites.net/hq.js', 'outbase')
+				("<?php echo $the_sopro_tracking_id; ?>", document, 'https://sopro-personalisation.azurewebsites.net/hq.js', 'outbase')
 			</script>
 
 			<?php $custom_content .= ob_get_clean();
